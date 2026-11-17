@@ -1,3 +1,11 @@
+//
+//  OBDSpeedManager.swift
+//  waze-obd-speed-manager-reference
+//
+//  Created and authored by David Todd (Daveytodd Inc.)
+//  Concept: BLE OBD-II speed telemetry for real-time navigation speed sync
+//
+
 import CoreBluetooth
 
 class OBDSpeedManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
@@ -65,7 +73,7 @@ class OBDSpeedManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate 
             let hexEnd = clean.index(hexStart, offsetBy: 2, limitedBy: clean.endIndex) ?? clean.endIndex
             let speedHex = String(clean[hexStart..<hexEnd])
             if let speedKmh = Int(speedHex, radix: 16) {
-                print("Live vehicle speed: \(speedKmh) km/h")
+                print("Live vehicle speed: \\(speedKmh) km/h")
             }
         }
     }
